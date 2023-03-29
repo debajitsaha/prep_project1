@@ -7,7 +7,7 @@
     <title>Backtraching</title>
 </head>
 <body>
-    <h1>Backtracking</h1> <br><br>
+    <h1>Backtracking</h1> <br>
     <p>Backtracking is a form of recursion.</p><br>
        <p> The usual scenario is that you are faced with a number of options, and you must choose one of these. After you make your choice you will get a new set of options; just what set of options you get depends on what choice you made. This procedure is repeated over and over until you reach a final state. If you made a good sequence of choices, your final state is a goal state; if you didn't, it isn't.</p> <br>
         
@@ -16,7 +16,7 @@
       <p>  Suppose you get to a bad leaf. You can backtrack to continue the search for a good leaf by revoking your most recent choice, and trying out the next option in that set of options, if you run out of options, revoke the choice that got you here, and try another choice at that node if you end up at the root with no options left, there are no good leaves to be found.</p> <br>
         
        <p> This needs an example</p> <br>
-       <img src="./Image_root@2x.png" alt=" image root not found"> <br>
+       <img src="./Image_root/Image_root.png" alt=" image root not found"> <br>
      <br>  <ol>
         <li>Starting at Root, your options are A and B. You choose A.</li>
         <br><li>At A, your options are C and D. You choose C.</li>
@@ -31,7 +31,7 @@
        <br> <p> In this example we drew a picture of a tree. The tree is an abstract model of the possible sequences of choices we could make. There is also a data structure called a tree, but usually we don't have a data structure to tell us what choices we have. (If we do have an actual tree data structure, backtracking on it is called depth-first tree searching.)</p> <br>
        <h3>The backtracking algorithm.</h3><pre style="color: blue;">
 
-        boolean solve (Node n) [
+        boolean solve (Node n) {
         
         if n is a leaf node
         
@@ -44,6 +44,7 @@
         for each child cofn
         
         if solve(c) succeeds, return true
+        }
         
         return false</pre>
         <br><p>
@@ -667,25 +668,24 @@ at bluej.runtime.ExecServer.suspendExecution(Unknown Source)
         </pre><br>
         <p>Along with canMove and makeMove, we are using methods puzzleSolved and printBoard with meanings that should be obvious</p><br>
         <p>Here is some output from the program:</p><br>
-        <ol reversed ><B>
-          <li>WHITE  WHITE  WHITE _______ BLACK  BLACK  BLACK</li>
-          <li>WHITE  WHITE  WHITE  BLACK ______  BLACK  BLACK </li>
-          <li>WHITE  WHITE  ______ BLACK  WHITE  BLACK  BLACK</li>
-          <li>WHITE ______  WHITE  BLACK  WHITE  BLACK  BLACK</li>
-          <li>WHITE  BLACK  WHITE ______  WHITE  BLACK  BLACK</li>
-          <li>WHITE  BLACK  WHITE  BLACK  WHITE ______  BLACK</li>
-          <li>WHITE  BLACK  WHITE  BLACK  WHITE  BLACK ______</li>
-          <li>WHITE  BLACK  WHITE  BLACK ______  BLACK  WHITE</li>
-          <li>WHITE  BLACK ______  BLACK  WHITE  BLACK  WHITE</li>
-          <li>______ BLACK  WHITE  BLACK  WHITE  BLACK  WHITE</li>
-          <li>BLACK ______  WHITE  BLACK  WHITE  BLACK  WHITE</li>
-          <li>BLACK  BLACK  WHITE ______  WHITE  BLACK  WHITE</li>
-          <li>BLACK  BLACK  WHITE  BLACK  WHITE ______  WHITE</li>
-          <li>BLACK  BLACK  WHITE  BLACK ______  WHITE  WHITE</li>
-          <li>BLACK  BLACK  ______ BLACK  WHITE  WHITE  WHITE</li>
-          <li>BLACK  BLACK  BLACK ______  WHITE  WHITE  WHITE</li>
-        </B>
-        </ol><br>
+        
+          <i><font color="#0000ff">16.</font></i> <b><font color="#000000">WHITE  WHITE  WHITE _______ BLACK  BLACK  BLACK</li> <br>
+          <i><font color="#0000ff">15.</font></i> <b><font color="#000000"></font>WHITE  WHITE  WHITE  BLACK ______  BLACK  BLACK </li><br>
+          <i><font color="#0000ff">14.</font></i> <b><font color="#000000"></font>WHITE  WHITE  ______ BLACK  WHITE  BLACK  BLACK</li><br>
+          <i><font color="#0000ff">13.</font></i> <b><font color="#000000"></font>WHITE ______  WHITE  BLACK  WHITE  BLACK  BLACK</li><br>
+         <i><font color="#0000ff">12.</font></i> <b><font color="#000000"></font> WHITE  BLACK  WHITE ______  WHITE  BLACK  BLACK</li><br>
+         <i><font color="#0000ff">11.</font></i> <b><font color="#000000"></font> WHITE  BLACK  WHITE  BLACK  WHITE ______  BLACK</li><br>
+         <i><font color="#0000ff">10.</font></i> <b><font color="#000000"></font> WHITE  BLACK  WHITE  BLACK  WHITE  BLACK ______</li><br>
+         <i><font color="#0000ff">9.</font></i> <b><font color="#000000"></font> WHITE  BLACK  WHITE  BLACK ______  BLACK  WHITE</li><br>
+          <i><font color="#0000ff">8.</font></i> <b><font color="#000000"></font>WHITE  BLACK ______  BLACK  WHITE  BLACK  WHITE</li><br>
+         <i><font color="#0000ff">7.</font></i> <b><font color="#000000"></font> ______ BLACK  WHITE  BLACK  WHITE  BLACK  WHITE</li><br>
+         <i><font color="#0000ff">6.</font></i> <b><font color="#000000"></font> BLACK ______  WHITE  BLACK  WHITE  BLACK  WHITE</li><br>
+         <i><font color="#0000ff">5.</font></i> <b><font color="#000000"></font> BLACK  BLACK  WHITE ______  WHITE  BLACK  WHITE</li><br>
+          <i><font color="#0000ff">4.</font></i> <b><font color="#000000"></font>BLACK  BLACK  WHITE  BLACK  WHITE ______  WHITE</li><br>
+          <i><font color="#0000ff">3.</font></i> <b><font color="#000000"></font>BLACK  BLACK  WHITE  BLACK ______  WHITE  WHITE</li><br>
+         <i><font color="#0000ff">2.</font></i> <b><font color="#000000"></font> BLACK  BLACK  ______ BLACK  WHITE  WHITE  WHITE</li><br>
+         <i><font color="#0000ff">1.</font></i> <b><font color="#000000"></font> BLACK  BLACK  BLACK ______  WHITE  WHITE  WHITE</li><br> </b>
+    
         <p>Notice that the solution is given in reverse order: BLACK starts out on the left and WHITE on the right, as in the tast line. I've added line numbers to the actual output in order to emphasize this point. Backtracking always produces its results (sequence of choices) in reverse order it is up to you, the programmer, to reverse the results again to get them in the correct order.</p>
 
 
